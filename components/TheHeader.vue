@@ -1,12 +1,7 @@
-<script setup lang="ts">
-</script>
-
-<template>
-<header class="header">
-    <NuxtLink to="/">
-        <IconsLogo />
-    </NuxtLink>
-</header>
+<template lang="pug">
+header.header
+    NuxtLink(to="/")
+        IconsLogo
 </template>
 
 <style scoped lang="scss">

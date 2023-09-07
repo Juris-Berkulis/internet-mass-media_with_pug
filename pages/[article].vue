@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Block, FetchResponse } from '~/types';
+import { type Block, type FetchResponse } from '~/types';
 
 definePageMeta({
     validate: async (route) => {
@@ -32,23 +32,20 @@ const blocksList: ComputedRef<Array<Block>> = computed(() => {
 });
 </script>
 
-<template>
-<article>
-    <Head>
-        <Title>{{ response?.meta.title }}</Title>
-        <Meta name="description" :content="response?.meta.description" />
-    </Head>
+<template lang="pug">
+article
+    Head
+        Title {{ response?.meta.title }}
+        Meta(name="description" :content="response?.meta.description")
 
-    <template v-for="block of blocksList" :key="block.id">
-        <BlocksArticleIntro class="section" v-if="block.type === 'article_intro_block'" :payload="block" />
-        <BlocksArticleList class="section" v-else-if="block.type === 'article_list_block'" :payload="block" />
-        <BlocksCtaForm class="section" v-else-if="block.type === 'cta_form_block'" :payload="block" />
-        <BlocksImage class="section" v-else-if="block.type === 'image_block'" :payload="block" />
-        <BlocksSubscribeForm class="section" v-else-if="block.type === 'subscribe_form_block'" :payload="block" />
-        <BlocksText class="section" v-else-if="block.type === 'text_block'" :payload="block" />
-        <BlocksSlider class="section" v-else-if="block.type === 'slider_block'" :payload="block" />
-    </template>
-</article>
+    template(v-for="block of blocksList" :key="block.id")
+        BlocksArticleIntro.section(v-if="block.type === 'article_intro_block'" :payload="block")
+        BlocksArticleList.section(v-else-if="block.type === 'article_list_block'" :payload="block")
+        BlocksCtaForm.section(v-else-if="block.type === 'cta_form_block'" :payload="block")
+        BlocksImage.section(v-else-if="block.type === 'image_block'" :payload="block")
+        BlocksSubscribeForm.section(v-else-if="block.type === 'subscribe_form_block'" :payload="block")
+        BlocksText.section(v-else-if="block.type === 'text_block'" :payload="block")
+        BlocksSlider.section(v-else-if="block.type === 'slider_block'" :payload="block")
 </template>
 
 <style scoped lang="scss">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Article, ArticleListBlock } from '~/types';
+import { type Article, type ArticleListBlock } from '~/types';
 
 interface Props {
     payload: ArticleListBlock,
@@ -12,11 +12,10 @@ const articlesList: ComputedRef<Array<Article>> = computed(() => {
 });
 </script>
 
-<template>
-<section>
-    <h2 class="title">{{ payload.data.title }}</h2>
-    <ArticlesList :articlesList="articlesList" />
-</section>
+<template lang="pug">
+section
+    h2.title {{ payload.data.title }}
+    ArticlesList(:articlesList="articlesList")
 </template>
 
 <style scoped lang="scss">

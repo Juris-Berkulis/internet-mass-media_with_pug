@@ -1,7 +1,6 @@
-<template>
-<button class="btn">
-    <slot>Подписаться</slot>
-</button>
+<template lang="pug">
+button.btn
+    slot Подписаться
 </template>
 
 <style scoped lang="scss">

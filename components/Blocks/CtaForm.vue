@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CtaFormBlock } from '~/types';
+import { type CtaFormBlock } from '~/types';
 import ctaImg from '~/assets/img/ctaImg.png';
 
 interface Props {
@@ -9,21 +9,17 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<template>
-<section>
-    <div class="background">
-        <img class="img" :src="ctaImg" alt="photo">
-        <div class="primary">
-            <h2 class="title">Стань участником проекта</h2>
-            <form class="form" @submit.prevent="console.log('Заявка отправлена')">
-                <BaseInput class="form__input" type="text" placeholder="Имя" />
-                <BaseInput class="form__input" type="tel" placeholder="Телефон" />
-                <BaseInput class="form__input" type="email" placeholder="Email" />
-                <BaseButton type="submit">Присоединиться</BaseButton>
-            </form>
-        </div>
-    </div>
-</section>
+<template lang="pug">
+section
+    div.background
+        img.img(:src="ctaImg" alt="photo")
+        div.primary
+            h2.title Стань участником проекта
+            form.form(@submit.prevent="console.log('Заявка отправлена')")
+                BaseInput.form__input(type="text" placeholder="Имя")
+                BaseInput.form__input(type="tel" placeholder="Телефон")
+                BaseInput.form__input(type="email" placeholder="Email")
+                BaseButton.submit Присоединиться
 </template>
 
 <style scoped lang="scss">

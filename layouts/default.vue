@@ -1,9 +1,8 @@
-<template>
-    <TheHeader />
-    <main class="main">
-        <slot />
-    </main>
-    <TheFooter />
+<template lang="pug">
+TheHeader
+main.main
+    slot
+TheFooter
 </template>
 
 <style scoped lang="scss">

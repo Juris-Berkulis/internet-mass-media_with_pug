@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Article } from '~/types';
+import { type Article } from '~/types';
 
 interface Props {
     articlesList: Array<Article>,
@@ -8,10 +8,9 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<template>
-<div class="articlesList">
-    <ArticleItem v-for="article of articlesList" :key="article.link" :article="article" />
-</div>
+<template lang="pug">
+div.articlesList
+    ArticleItem(v-for="article of articlesList" :key="article.link" :article="article")
 </template>
 
 <style scoped lang="scss">

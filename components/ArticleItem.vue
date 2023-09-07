@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Article } from '~/types';
+import { type Article } from '~/types';
 
 interface Props {
     article: Article,
@@ -12,12 +12,11 @@ const articleImageSrc: ComputedRef<string> = computed(() => {
 });
 </script>
 
-<template>
-<div class="article">
-    <div class="article__img"></div>
-    <h2 class="article__title">{{ article.title }}</h2>
-    <BaseBtnLink :to="article.link" />
-</div>
+<template lang="pug">
+div.article
+    div.article__img
+    h2.article__title {{ article.title }}
+    BaseBtnLink(:to="article.link")
 </template>
 
 <style scoped lang="scss">

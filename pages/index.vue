@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FetchResponse, Article } from '~/types';
+import { type FetchResponse, type Article } from '~/types';
 
 const route = useRoute();
 
@@ -24,13 +24,11 @@ const articlesList: ComputedRef<Article[]> = computed(() => {
 });
 </script>
 
-<template>
-<div class="homePage">
-    <Head>
-        <Title>{{ response?.meta.title }}</Title>
-        <Meta name="description" :content="response?.meta.description" />
-    </Head>
+<template lang="pug">
+div.homePage
+    Head
+        Title {{ response?.meta.title }}
+        Meta(name="description" :content="response?.meta.description")
 
-    <ArticlesList :articlesList="articlesList" />
-</div>
+    ArticlesList(:articlesList="articlesList")
 </template>

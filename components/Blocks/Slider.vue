@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SliderBlock } from '~/types';
+import { type SliderBlock } from '~/types';
 
 interface Props {
     payload: SliderBlock,
@@ -24,23 +24,17 @@ const nextImg = (): void => {
 };
 </script>
 
-<template>
-<section>
-    <div class="container">
-        <button class="btn prev" @click="prevImg">
-            <IconsArrow />
-        </button>
-        <button class="btn next" @click="nextImg">
-            <IconsArrow />
-        </button>
-        <template v-for="src, index of payload.data" :key="src">
-            <figure class="figure" v-if="index === indexOfOpenedImg">
-                <img class="img" :src="src" :alt="src">
-            </figure>
-        </template>
-    </div>
-    <div class="pagination">{{ numberOfOpenedImg }} / {{ payload.data.length }}</div>
-</section>
+<template lang="pug">
+section
+    div.container
+        button.btn.prev(@click="prevImg")
+            IconsArrow
+        button.btn.next(@click="nextImg")
+            IconsArrow
+        template(v-for="src, index of payload.data" :key="src")
+            figure.figure(v-if="index === indexOfOpenedImg")
+                img.img(:src="src" :alt="src")
+    div.pagination {{ numberOfOpenedImg }} / {{ payload.data.length }}
 </template>
 
 <style scoped lang="scss">

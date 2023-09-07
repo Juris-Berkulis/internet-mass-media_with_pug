@@ -1,5 +1,5 @@
-<template>
-<input class="input">
+<template lang="pug">
+input.input
 </template>
 
 <style scoped lang="scss">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TextBlock } from '~/types';
+import { type TextBlock } from '~/types';
 import quotes from '~/assets/icons/quotes.svg';
 
 interface Props {
@@ -13,10 +13,9 @@ const quotesUrl: ComputedRef<string> = computed(() => {
 });
 </script>
 
-<template>
-<section>
-    <div class="serverHtml" v-html="payload.data"></div>
-</section>
+<template lang="pug">
+section
+    div.serverHtml(v-html="payload.data")
 </template>
 
 <style lang="scss">

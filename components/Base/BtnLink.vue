@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArticleLink } from '~/types';
+import { type ArticleLink } from '~/types';
 
 interface Props {
     to: ArticleLink,
@@ -8,10 +8,9 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<template>
-<NuxtLink class="btnLink" :to="to">
-    <slot>Читать</slot>
-</NuxtLink>
+<template lang="pug">
+NuxtLink.btnLink(:to="to")
+    slot Читать
 </template>
 
 <style scoped lang="scss">

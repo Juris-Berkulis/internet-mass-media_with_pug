@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArticleIntroBlock } from '~/types';
+import { type ArticleIntroBlock } from '~/types';
 
 interface Props {
     payload: ArticleIntroBlock,
@@ -8,24 +8,19 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<template>
-<section class="section">
-    <figure class="figure">
-        <img class="img" :src="payload.data.image" :alt="payload.data.title">
-    </figure>
-    <div class="primary">
-        <h1 class="title">{{ payload.data.title }}</h1>
-        <div class="additionally">
-            <IconsClock />
-            <p class="additionally__text">{{ payload.data.reading_time }} мин время чтения</p>
-        </div>
-        <div class="additionally">
-            <IconsEye />
-            <p class="additionally__text">{{ payload.data.views_count }} прочитали статью</p>
-        </div>
-        <p class="description">{{ payload.data.short_description }}</p>
-    </div>
-</section>
+<template lang="pug">
+section.section
+    figure.figure
+        img.img(:src="payload.data.image" :alt="payload.data.title")
+    div.primary
+        h1.title {{ payload.data.title }}
+        div.additionally
+            IconsClock
+            p.additionally__text {{ payload.data.reading_time }} мин время чтения
+        div.additionally
+            IconsEye
+            p.additionally__text {{ payload.data.views_count }} прочитали статью
+        p.description {{ payload.data.short_description }}
 </template>
 
 <style scoped lang="scss">

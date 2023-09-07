@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ImageBlock } from '~/types';
+import { type ImageBlock } from '~/types';
 
 interface Props {
     payload: ImageBlock,
@@ -8,13 +8,11 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<template>
-<section>
-    <figure class="figure">
-        <img class="img" :src="payload.data.src" :alt="payload.data.caption">
-        <figcaption class="figcaption" v-if="payload.data.caption">{{ payload.data.caption }}</figcaption>
-    </figure>
-</section>
+<template lang="pug">
+section
+    figure.figure
+        img.img(:src="payload.data.src" :alt="payload.data.caption")
+        figcaption.figcaption(v-if="payload.data.caption") {{ payload.data.caption }}
 </template>
 
 <style scoped lang="scss">

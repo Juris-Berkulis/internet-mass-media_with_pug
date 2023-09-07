@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SubscribeFormBlock } from '~/types';
+import { type SubscribeFormBlock } from '~/types';
 
 interface Props {
     payload: SubscribeFormBlock,
@@ -8,10 +8,9 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<template>
-<section>
-    <BaseForm />
-</section>
+<template lang="pug">
+section
+    BaseForm
 </template>
 
 <style scoped lang="scss">

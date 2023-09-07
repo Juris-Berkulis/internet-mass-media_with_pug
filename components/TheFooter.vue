@@ -1,33 +1,23 @@
-<template>
-<footer class="footer">
-    <div class="info">
-        <div class="about">
-            <NuxtLink class="logoLink" to="/">
-                <IconsLogo />
-            </NuxtLink>
-            <p class="description">Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения и актуальные тенденции, раскрывая мир эстетики и креативности</p>
-        </div>
-        <div class="links">
-            <p class="links__emailLabel">email</p>
-            <a class="links__emailLink" href="mailto:testblogsupport@gmail.com" id="email">testblogsupport@gmail.com</a>
-            <div class="socialMedia">
-                <a class="socialMedia__link" href="#" target="_blank">
-                    <IconsFacebook />
-                </a>
-                <a class="socialMedia__link" href="#" target="_blank">
-                    <IconsVk />
-                </a>
-                <a class="socialMedia__link" href="#" target="_blank">
-                    <IconsInstagram />
-                </a>
-                <a class="socialMedia__link" href="#" target="_blank">
-                    <IconsTelegram />
-                </a>
-            </div>
-        </div>
-    </div>
-    <BaseForm />
-</footer>
+<template lang="pug">
+footer.footer
+    div.info
+        div.about
+            NuxtLink.logoLink(to="/")
+                IconsLogo
+            p.description Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения и актуальные тенденции, раскрывая мир эстетики и креативности
+        div.links
+            p.links__emailLabel email
+            a.links__emailLink(href="mailto:testblogsupport@gmail.com" id="email") testblogsupport@gmail.com
+            div.socialMedia
+                a.socialMedia__link(href="#" target="_blank")
+                    IconsFacebook
+                a.socialMedia__link(href="#" target="_blank")
+                    IconsVk
+                a.socialMedia__link(href="#" target="_blank")
+                    IconsInstagram
+                a.socialMedia__link(href="#" target="_blank")
+                    IconsTelegram
+    BaseForm
 </template>
 
 <style scoped lang="scss">

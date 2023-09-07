@@ -2,12 +2,11 @@
 const inputId: string = Date.now().toString();
 </script>
 
-<template>
-<form class="form" @submit.prevent="console.log('Подписка оформлена')" method="post">
-    <label class="form__label" :for="inputId">Подпишитесь на рассылку</label>
-    <BaseInput class="form__input" type="text" :id="inputId" placeholder="Email" />
-    <BaseButton type="submit" />
-</form>
+<template lang="pug">
+form.form(@submit.prevent="console.log('Подписка оформлена')" method="post")
+    label.form__label(:for="inputId") Подпишитесь на рассылку
+    BaseInput.form__input(type="text" :id="inputId" placeholder="Email")
+    BaseButton(type="submit")
 </template>
 
 <style scoped lang="scss">
