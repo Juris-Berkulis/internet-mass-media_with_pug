@@ -40,12 +40,13 @@ section
 <style scoped lang="scss">
 .container {
     position: relative;
-    margin: 0 114px 25px;
+    margin-bottom: 25px;
+    padding: 0 114px;
 
     @media (max-width: 1040px) {
         & {
-            margin-right: 0;
-            margin-left: 0;
+            padding-right: 0;
+            padding-left: 0;
         }
     }
 }
