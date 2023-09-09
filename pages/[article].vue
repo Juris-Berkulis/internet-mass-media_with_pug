@@ -38,32 +38,5 @@ article
         Title {{ response?.meta.title }}
         Meta(name="description" :content="response?.meta.description")
 
-    template(v-for="block of blocksList" :key="block.id")
-        BlocksArticleIntro.section(v-if="block.type === 'article_intro_block'" :payload="block")
-        BlocksArticleList.section(v-else-if="block.type === 'article_list_block'" :payload="block")
-        BlocksCtaForm.section(v-else-if="block.type === 'cta_form_block'" :payload="block")
-        BlocksImage.section(v-else-if="block.type === 'image_block'" :payload="block")
-        BlocksSubscribeForm.section(v-else-if="block.type === 'subscribe_form_block'" :payload="block")
-        BlocksText.section(v-else-if="block.type === 'text_block'" :payload="block")
-        BlocksSlider.section(v-else-if="block.type === 'slider_block'" :payload="block")
+    Blocks(v-for="block of blocksList" :key="block.id" :block="block")
 </template>
-
-<style scoped lang="scss">
-.section {
-    padding: 50px 0;
-
-    @media (max-width: 600px) {
-        & {
-            padding: 30px 0;
-        }
-    }
-
-    &:first-of-type {
-        padding-top: 0;
-    }
-
-    &:last-of-type {
-        padding-bottom: 0;
-    }
-}
-</style>
