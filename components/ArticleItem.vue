@@ -8,7 +8,7 @@ interface Props {
 const props = defineProps<Props>();
 
 const articleImageSrc: ComputedRef<string> = computed(() => {
-    return `url(${props.article.image}), lightgray 50% / cover no-repeat`
+    return `url(${props.article.image})`
 });
 </script>
 
@@ -44,7 +44,11 @@ div.article
     width: 100%;
     aspect-ratio: calc(427 / 320);
     margin-bottom: 20px;
-    background: v-bind(articleImageSrc);
+    background-image: v-bind(articleImageSrc);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightgray;
 }
 
 .article__title {
